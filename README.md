@@ -1,4 +1,7 @@
-# direction_ml (current-density direction prediction)
+# j-map tdcs brain direction_ml (current-density direction prediction) 
+
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 This folder contains modular Python code to:
 
@@ -427,3 +430,47 @@ The final metrics table (`test_metrics.csv`) and PDF report include **both level
 * This avoids optimistic bias and preserves strict separation between training and evaluation
 
 ---
+
+
+# Maintenance Status
+
+**Repository Name:** HPO QuickLab Hold-Out Experiments  
+**Maintainer(s):** [Junfu Cheng, Department of Electrical and Computer Engineering, University of Florida, junfu.cheng@ufl.edu]  
+**Status:** Active  
+**Last Updated:** [2026-05-01]
+
+## Status Definitions
+
+- **Active**: Actively developed, bugs fixed, new features added.
+- **Maintenance Mode**: Only critical bug fixes and security updates.
+- **Deprecated**: No longer recommended; no new features; may be removed in future.
+- **Archived**: Read-only repository; no longer maintained.
+
+## Notes
+
+This repository is currently an MVP for hyperparameter optimization experiments using hold-out validation and SLURM-based execution.
+
+# Support Policy
+
+**Repository Name:** j-map tdcs brain direction_ml (current-density direction prediction) 
+**Maintainer(s):** [Junfu Cheng, Department of Electrical and Computer Engineering, University of Florida, junfu.cheng@ufl.edu]  
+
+## Supported Versions
+
+- Active branches: `main`
+- Unsupported branches: [Nan]
+
+## Issue Handling
+
+- Bugs or issues in active branches will be addressed within [10] business days.
+- Pull requests from the community will be reviewed based on relevance and priority.
+- Deprecated or archived repositories may not receive support.
+
+## Contribution Guidelines
+
+- Please refer to `CONTRIBUTING.md` for pull request and issue submission guidelines.
+- When reporting a bug, include steps to reproduce, environment details, logs, and error messages.
+
+## Contact
+
+For questions or clarifications, contact [Junfu Cheng, Department of Electrical and Computer Engineering, University of Florida, junfu.cheng@ufl.edu].
