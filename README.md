@@ -47,7 +47,7 @@ Outputs will appear under:
 
 ---
 
-# new feature-setting option for θ / φ handling
+# New Feature-Setting Option for θ / φ Handling
 
 This module performs **machine-learning–based prediction of responder vs non-responder status** using **MNI-registered current density direction maps** derived from ROAST simulations.
 
@@ -251,8 +251,8 @@ Threshold-based metrics use a **fixed probability threshold of 0.5**.
 
 Let:
 
-* ( $y_i$ ) be the true test labels
-* ( $\hat{p}_i$ ) be predicted probabilities on the held-out test set
+* $y_i$ be the true test labels
+* $\hat{p}_i$ be predicted probabilities on the held-out test set
 
 Metrics are computed on the **entire held-out test set**.
 
@@ -262,31 +262,38 @@ Metrics are computed on the **entire held-out test set**.
 
 To estimate uncertainty, **non-parametric bootstrap resampling** is applied to the held-out test set:
 
-1. Draw ( ${B} = \text{BOOTSTRAP}_\text{N}$ ) bootstrap samples (with replacement)
+1. Draw $B = \text{BOOTSTRAP}_{N}$ bootstrap samples with replacement
 2. Compute each metric on every bootstrap sample
-3. Obtain a bootstrap distribution ( ${ M^{(b)} }_{b=1}^B$ )
+3. Obtain a bootstrap distribution $\{M^{(b)}\}_{b=1}^{B}$
 
 #### Reported Statistics
 
-* **Mean**
-$
-\mu = \frac{1}{B} \sum_{b=1}^B M^{(b)}
-$
+**Mean**
 
-* **Standard Deviation**
-$
-\sigma = \sqrt{\frac{1}{B-1} \sum_{b=1}^B (M^{(b)} - \mu)^2}
-$
+```math
+\mu = \frac{1}{B} \sum_{b=1}^{B} M^{(b)}
+```
 
-* **95% Confidence Interval**
-$
-\text{CI}*{95\%} =
+**Standard Deviation**
+
+```math
+\sigma =
+\sqrt{
+\frac{1}{B-1}
+\sum_{b=1}^{B}
+\left(M^{(b)} - \mu\right)^2
+}
+```
+
+**95% Confidence Interval**
+
+```math
+\text{CI}_{95\%} =
 \left[
-Q*{0.025}({M^{(b)}}),
-;
-Q_{0.975}({M^{(b)}})
+Q_{0.025}\left(\{M^{(b)}\}_{b=1}^{B}\right),
+Q_{0.975}\left(\{M^{(b)}\}_{b=1}^{B}\right)
 \right]
-$
+```
 
 ### Interpretation
 
@@ -319,42 +326,41 @@ In mixed-site mode, metrics are summarized at **two distinct levels**, both of w
 
 ### 1. Repetition-Level Metrics (OOF-Pooled)
 
-For repetition ( $r$ ):
+For repetition $r$:
 
 * Each subject receives exactly **one OOF prediction**
 * Metrics are computed once using all OOF predictions in that repetition
 
-Let ( M^{(r)} ) denote the metric value for repetition ( $r$ ).
+Let $M^{(r)}$ denote the metric value for repetition $r$.
 
 #### Mean Across Repetitions
 
-$
+```math
 \mu_{\text{rep}} =
 \frac{1}{R}
 \sum_{r=1}^{R} M^{(r)}
-$
+```
 
 #### Standard Deviation Across Repetitions
 
-$
+```math
 \sigma_{\text{rep}} =
 \sqrt{
 \frac{1}{R-1}
 \sum_{r=1}^{R}
 \left(M^{(r)} - \mu_{\text{rep}}\right)^2
 }
-$
+```
 
 #### 95% Confidence Interval (Percentile-Based)
 
-$
-\text{CI}*{95\%,\text{rep}} =
+```math
+\text{CI}_{95\%,\text{rep}} =
 \left[
-Q*{0.025}({M^{(r)}}),
-;
-Q_{0.975}({M^{(r)}})
+Q_{0.025}\left(\{M^{(r)}\}_{r=1}^{R}\right),
+Q_{0.975}\left(\{M^{(r)}\}_{r=1}^{R}\right)
 \right]
-$
+```
 
 **Interpretation:**
 Captures **stability of the full modeling pipeline** across independent CV repetitions.
@@ -363,44 +369,44 @@ Captures **stability of the full modeling pipeline** across independent CV repet
 
 ### 2. Outer-Fold Test Metrics (All Repetitions × All Folds)
 
-For each repetition ( $r$ ) and outer fold ( $k$ ):
+For each repetition $r$ and outer fold $k$:
 
 * Metrics are computed **only on the outer test fold**
-* This yields ( $R \times K$ ) metric values
+* This yields $R \times K$ metric values
 
-Let ( $M^{(r,k)}$ ) denote the metric from repetition ( $r$ ), fold ( $k$ ).
+Let $M^{(r,k)}$ denote the metric from repetition $r$, fold $k$.
 
 #### Mean Across All Outer-Fold Evaluations
 
-$
+```math
 \mu_{\text{fold}} =
 \frac{1}{RK}
 \sum_{r=1}^{R}
 \sum_{k=1}^{K}
 M^{(r,k)}
-$
+```
 
 #### Standard Deviation Across All Outer-Fold Evaluations
 
-$
+```math
 \sigma_{\text{fold}} =
 \sqrt{
 \frac{1}{RK-1}
-\sum_{r,k}
+\sum_{r=1}^{R}
+\sum_{k=1}^{K}
 \left(M^{(r,k)} - \mu_{\text{fold}}\right)^2
 }
-$
+```
 
 #### 95% Confidence Interval (Percentile-Based)
 
-$
-\text{CI}*{95\%,\text{fold}} =
+```math
+\text{CI}_{95\%,\text{fold}} =
 \left[
-Q*{0.025}({M^{(r,k)}}),
-;
-Q_{0.975}({M^{(r,k)}})
+Q_{0.025}\left(\{M^{(r,k)}\}_{r=1,k=1}^{R,K}\right),
+Q_{0.975}\left(\{M^{(r,k)}\}_{r=1,k=1}^{R,K}\right)
 \right]
-$
+```
 
 **Interpretation:**
 Reflects **variability across individual outer test folds**, providing a more granular view of performance dispersion.
@@ -452,7 +458,7 @@ This repository is currently an MVP for hyperparameter optimization experiments 
 
 # Support Policy
 
-**Repository Name:** j-map tdcs brain direction_ml (current-density direction prediction) 
+**Repository Name:** j-map tdcs brain direction_ml (current-density direction prediction)
 **Maintainer(s):** [Junfu Cheng, Department of Electrical and Computer Engineering, University of Florida, junfu.cheng@ufl.edu]  
 
 ## Supported Versions
