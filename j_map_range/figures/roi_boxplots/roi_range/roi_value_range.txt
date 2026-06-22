@@ -1,0 +1,11 @@
+Per-ROI shared value range (vmin, vmax) across all subjects
+================================================================
+ROI                                                              vmin          vmax
+----------------------------------------------------------------
+Temporal Fusiform Cortex, posterior division               0.0000e+00    6.3703e-02
+Inferior Temporal Gyrus, posterior division                0.0000e+00    7.0941e-02
+Inferior Temporal Gyrus, temporooccipital part             0.0000e+00    5.8725e-02
+Supramarginal Gyrus, posterior division                    0.0000e+00    6.4118e-02
+Lateral Occipital Cortex, inferior division                0.0000e+00    3.5357e-02
+Temporal Fusiform Cortex, anterior division                0.0000e+00    7.1695e-02
+Temporal Pole                                              0.0000e+00    9.0663e-02
