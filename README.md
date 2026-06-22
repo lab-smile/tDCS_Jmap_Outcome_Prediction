@@ -251,8 +251,8 @@ Threshold-based metrics use a **fixed probability threshold of 0.5**.
 
 Let:
 
-* ( y_i ) be the true test labels
-* ( \hat{p}_i ) be predicted probabilities on the held-out test set
+* ( $y_i$ ) be the true test labels
+* ( $\hat{p}_i$ ) be predicted probabilities on the held-out test set
 
 Metrics are computed on the **entire held-out test set**.
 
@@ -262,31 +262,31 @@ Metrics are computed on the **entire held-out test set**.
 
 To estimate uncertainty, **non-parametric bootstrap resampling** is applied to the held-out test set:
 
-1. Draw ( B = \text{BOOTSTRAP_N} ) bootstrap samples (with replacement)
+1. Draw ( ${B} = \text{BOOTSTRAP}_\text{N}$ ) bootstrap samples (with replacement)
 2. Compute each metric on every bootstrap sample
-3. Obtain a bootstrap distribution ( { M^{(b)} }_{b=1}^B )
+3. Obtain a bootstrap distribution ( ${ M^{(b)} }_{b=1}^B$ )
 
 #### Reported Statistics
 
 * **Mean**
-  [
-  \mu = \frac{1}{B} \sum_{b=1}^B M^{(b)}
-  ]
+$
+\mu = \frac{1}{B} \sum_{b=1}^B M^{(b)}
+$
 
 * **Standard Deviation**
-  [
-  \sigma = \sqrt{\frac{1}{B-1} \sum_{b=1}^B (M^{(b)} - \mu)^2}
-  ]
+$
+\sigma = \sqrt{\frac{1}{B-1} \sum_{b=1}^B (M^{(b)} - \mu)^2}
+$
 
 * **95% Confidence Interval**
-  [
-  \text{CI}*{95%} =
-  \left[
-  Q*{0.025}({M^{(b)}}),
-  ;
-  Q_{0.975}({M^{(b)}})
-  \right]
-  ]
+$
+\text{CI}*{95\%} =
+\left[
+Q*{0.025}({M^{(b)}}),
+;
+Q_{0.975}({M^{(b)}})
+\right]
+$
 
 ### Interpretation
 
@@ -319,42 +319,42 @@ In mixed-site mode, metrics are summarized at **two distinct levels**, both of w
 
 ### 1. Repetition-Level Metrics (OOF-Pooled)
 
-For repetition ( r ):
+For repetition ( $r$ ):
 
 * Each subject receives exactly **one OOF prediction**
 * Metrics are computed once using all OOF predictions in that repetition
 
-Let ( M^{(r)} ) denote the metric value for repetition ( r ).
+Let ( M^{(r)} ) denote the metric value for repetition ( $r$ ).
 
 #### Mean Across Repetitions
 
-[
+$
 \mu_{\text{rep}} =
 \frac{1}{R}
 \sum_{r=1}^{R} M^{(r)}
-]
+$
 
 #### Standard Deviation Across Repetitions
 
-[
+$
 \sigma_{\text{rep}} =
 \sqrt{
 \frac{1}{R-1}
 \sum_{r=1}^{R}
 \left(M^{(r)} - \mu_{\text{rep}}\right)^2
 }
-]
+$
 
 #### 95% Confidence Interval (Percentile-Based)
 
-[
-\text{CI}*{95%,\text{rep}} =
+$
+\text{CI}*{95\%,\text{rep}} =
 \left[
 Q*{0.025}({M^{(r)}}),
 ;
 Q_{0.975}({M^{(r)}})
 \right]
-]
+$
 
 **Interpretation:**
 Captures **stability of the full modeling pipeline** across independent CV repetitions.
@@ -363,44 +363,44 @@ Captures **stability of the full modeling pipeline** across independent CV repet
 
 ### 2. Outer-Fold Test Metrics (All Repetitions × All Folds)
 
-For each repetition ( r ) and outer fold ( k ):
+For each repetition ( $r$ ) and outer fold ( $k$ ):
 
 * Metrics are computed **only on the outer test fold**
-* This yields ( R \times K ) metric values
+* This yields ( $R \times K$ ) metric values
 
-Let ( M^{(r,k)} ) denote the metric from repetition ( r ), fold ( k ).
+Let ( $M^{(r,k)}$ ) denote the metric from repetition ( $r$ ), fold ( $k$ ).
 
 #### Mean Across All Outer-Fold Evaluations
 
-[
+$
 \mu_{\text{fold}} =
 \frac{1}{RK}
 \sum_{r=1}^{R}
 \sum_{k=1}^{K}
 M^{(r,k)}
-]
+$
 
 #### Standard Deviation Across All Outer-Fold Evaluations
 
-[
+$
 \sigma_{\text{fold}} =
 \sqrt{
 \frac{1}{RK-1}
 \sum_{r,k}
 \left(M^{(r,k)} - \mu_{\text{fold}}\right)^2
 }
-]
+$
 
 #### 95% Confidence Interval (Percentile-Based)
 
-[
-\text{CI}*{95%,\text{fold}} =
+$
+\text{CI}*{95\%,\text{fold}} =
 \left[
 Q*{0.025}({M^{(r,k)}}),
 ;
 Q_{0.975}({M^{(r,k)}})
 \right]
-]
+$
 
 **Interpretation:**
 Reflects **variability across individual outer test folds**, providing a more granular view of performance dispersion.
