@@ -1,0 +1,70 @@
+,roi_index,roi_name,mean_abs_shap
+0,38,"Cortex: Temporal Fusiform Cortex, posterior division",2.6580907672647086e-17
+1,15,"Cortex: Inferior Temporal Gyrus, posterior division",2.442756740683033e-17
+2,16,"Cortex: Inferior Temporal Gyrus, temporooccipital part",2.4151587949554946e-17
+3,20,"Cortex: Supramarginal Gyrus, posterior division",2.3372424589491396e-17
+4,23,"Cortex: Lateral Occipital Cortex, inferior division",2.263015376862427e-17
+5,37,"Cortex: Temporal Fusiform Cortex, anterior division",2.156634730596022e-17
+6,8,Cortex: Temporal Pole,2.1365336328452045e-17
+7,52,Subcortex: Left Thalamus,2.1123180785767682e-17
+8,56,Subcortex: Brain-Stem,2.1036728054519194e-17
+9,57,Subcortex: Left Hippocampus,2.100864416721286e-17
+10,25,Cortex: Frontal Medial Cortex,2.070365034443523e-17
+11,22,"Cortex: Lateral Occipital Cortex, superior division",2.0477779817194786e-17
+12,50,Subcortex: Left Cerebral Cortex,2.0336656516935147e-17
+13,49,Subcortex: Left Cerebral White Matter,2.014979013105186e-17
+14,2,Cortex: Insular Cortex,2.012647269212684e-17
+15,42,Cortex: Central Opercular Cortex,2.0053447302305894e-17
+16,61,Subcortex: Right Cerebral Cortex,2.0029023064306902e-17
+17,35,"Cortex: Parahippocampal Gyrus, posterior division",1.999209622066005e-17
+18,60,Subcortex: Right Cerebral White Matter,1.9920567175622015e-17
+19,28,Cortex: Paracingulate Gyrus,1.963715531209239e-17
+20,34,"Cortex: Parahippocampal Gyrus, anterior division",1.950205823660404e-17
+21,11,"Cortex: Middle Temporal Gyrus, anterior division",1.9394117543815973e-17
+22,43,Cortex: Parietal Opercular Cortex,1.9175368809648694e-17
+23,18,Cortex: Superior Parietal Lobule,1.9070702406257866e-17
+24,55,Subcortex: Left Pallidum,1.8799950029611248e-17
+25,17,Cortex: Postcentral Gyrus,1.8348805292496683e-17
+26,68,Subcortex: Right Amygdala,1.8214784660514023e-17
+27,33,Cortex: Frontal Orbital Cortex,1.8147370276673646e-17
+28,21,Cortex: Angular Gyrus,1.7834803474817175e-17
+29,40,Cortex: Occipital Fusiform Gyrus,1.7245989700762478e-17
+30,7,Cortex: Precentral Gyrus,1.7098896938443456e-17
+31,51,Subcortex: Left Lateral Ventricle,1.6763825707500758e-17
+32,3,Cortex: Superior Frontal Gyrus,1.5780411578495006e-17
+33,54,Subcortex: Left Putamen,1.5719796712947034e-17
+34,1,Cortex: Frontal Pole,
+35,4,Cortex: Middle Frontal Gyrus,
+36,5,"Cortex: Inferior Frontal Gyrus, pars triangularis",
+37,6,"Cortex: Inferior Frontal Gyrus, pars opercularis",
+38,9,"Cortex: Superior Temporal Gyrus, anterior division",
+39,10,"Cortex: Superior Temporal Gyrus, posterior division",
+40,12,"Cortex: Middle Temporal Gyrus, posterior division",
+41,13,"Cortex: Middle Temporal Gyrus, temporooccipital part",
+42,14,"Cortex: Inferior Temporal Gyrus, anterior division",
+43,19,"Cortex: Supramarginal Gyrus, anterior division",
+44,24,Cortex: Intracalcarine Cortex,
+45,26,Cortex: Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex),
+46,27,Cortex: Subcallosal Cortex,
+47,29,"Cortex: Cingulate Gyrus, anterior division",
+48,30,"Cortex: Cingulate Gyrus, posterior division",
+49,31,Cortex: Precuneous Cortex,
+50,32,Cortex: Cuneal Cortex,
+51,36,Cortex: Lingual Gyrus,
+52,39,Cortex: Temporal Occipital Fusiform Cortex,
+53,41,Cortex: Frontal Opercular Cortex,
+54,44,Cortex: Planum Polare,
+55,45,Cortex: Heschl's Gyrus (includes H1 and H2),
+56,46,Cortex: Planum Temporale,
+57,47,Cortex: Supracalcarine Cortex,
+58,48,Cortex: Occipital Pole,
+59,53,Subcortex: Left Caudate,
+60,58,Subcortex: Left Amygdala,
+61,59,Subcortex: Left Accumbens,
+62,62,Subcortex: Right Lateral Ventricle,
+63,63,Subcortex: Right Thalamus,
+64,64,Subcortex: Right Caudate,
+65,65,Subcortex: Right Putamen,
+66,66,Subcortex: Right Pallidum,
+67,67,Subcortex: Right Hippocampus,
+68,69,Subcortex: Right Accumbens,
