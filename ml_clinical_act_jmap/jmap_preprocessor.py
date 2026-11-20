@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pandas as pd
 import nibabel as nib
@@ -63,13 +64,13 @@ class JmapACTPreprocessor(BaseEstimator, TransformerMixin):
     def _load_atlas(self):
         """Load atlas and label mapping (no resampling; assumes MNI space)."""
         #print(self.atlas_path)
-        atlas_path = "/home/junfu.cheng/SMILE/github/j_map_2025_8_10/ml_clinical_trial/hammers_atlas/Hammers_mith_atlas_n30r83_SPM5.nii.gz"
+        atlas_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "ml_clinical_trial", "hammers_atlas", "Hammers_mith_atlas_n30r83_SPM5.nii.gz")
         self.atlas_img = nib.load(atlas_path)
         self.atlas_data = self.atlas_img.get_fdata().astype(int)
 
         id2name = {}
         #print(self.atlas_labels_path)
-        atlas_labels_path = "/home/junfu.cheng/SMILE/github/j_map_2025_8_10/ml_clinical_trial/hammers_atlas/n30r83_id2name_clean.txt"
+        atlas_labels_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "ml_clinical_trial", "hammers_atlas", "n30r83_id2name_clean.txt")
         with open(atlas_labels_path, "r") as f:
             for line in f:
                 line = line.strip()

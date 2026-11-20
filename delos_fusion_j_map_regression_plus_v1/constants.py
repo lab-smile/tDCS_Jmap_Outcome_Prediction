@@ -23,15 +23,16 @@ EHR_PASSWORD = "password"
 # ─────────────────────────────────────────────
 # Atlas
 # ─────────────────────────────────────────────
-ATLAS_PATH = (
-    "/home/junfu.cheng/SMILE/github/j_map_2025_8_10/"
-    "ml_clinical_trial/hammers_atlas/"
-    "Hammers_mith_atlas_n30r83_SPM5.nii.gz"
+# Repository root (parent of this delos_fusion_j_map_regression_plus_v1/ folder)
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+ATLAS_PATH = os.path.join(
+    _REPO_ROOT, "ml_clinical_trial", "hammers_atlas",
+    "Hammers_mith_atlas_n30r83_SPM5.nii.gz",
 )
-ATLAS_LABELS_PATH = (
-    "/home/junfu.cheng/SMILE/github/j_map_2025_8_10/"
-    "ml_clinical_trial/hammers_atlas/"
-    "n30r83_id2name_clean.txt"
+ATLAS_LABELS_PATH = os.path.join(
+    _REPO_ROOT, "ml_clinical_trial", "hammers_atlas",
+    "n30r83_id2name_clean.txt",
 )
 
 # ─────────────────────────────────────────────
@@ -48,10 +49,7 @@ JMAP_PHI_FILENAME        = "wT1_tDCSLAB_PhiBrain.nii"
 # ─────────────────────────────────────────────
 # J-Map vector components  (x / y / z)
 # ─────────────────────────────────────────────
-JMAP_VECTOR_BASE_DIR = (
-    "/orange/ruogu.fang/junfu.cheng/SMILE/j_map/"
-    "j_map_direction/read_matlab_from_skylar/"
-)
+JMAP_VECTOR_BASE_DIR = os.path.join(_REPO_ROOT, "read_matlab_from_skylar", "")
 JMAP_JX_FILENAME = "wT1_tDCSLAB_Jbrain_x_fromEmag.nii"
 JMAP_JY_FILENAME = "wT1_tDCSLAB_Jbrain_y_fromEmag.nii"
 JMAP_JZ_FILENAME = "wT1_tDCSLAB_Jbrain_z_fromEmag.nii"

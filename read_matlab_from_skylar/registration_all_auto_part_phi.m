@@ -1,6 +1,6 @@
 % registration_all_auto_part_phi.m
 
-rootDir = '/orange/ruogu.fang/junfu.cheng/SMILE/j_map/j_map_direction/read_matlab_from_skylar';
+rootDir = fileparts(mfilename('fullpath'));  % = <repo>/read_matlab_from_skylar (subject folders live here)
 folders = dir(rootDir);
 phi_file_name = 'T1_tDCSLAB_phi_fromE_maskJbrain.nii';
 

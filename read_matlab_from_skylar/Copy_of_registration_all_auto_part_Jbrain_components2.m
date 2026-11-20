@@ -17,7 +17,7 @@
 
 clear; clc;
 
-rootDir = '/orange/ruogu.fang/junfu.cheng/SMILE/j_map/j_map_direction/read_matlab_from_skylar';
+rootDir = fileparts(mfilename('fullpath'));  % = <repo>/read_matlab_from_skylar (subject folders live here)
 folders = dir(rootDir);
 
 % Files to normalize (resample) using deformation estimated from T1.nii

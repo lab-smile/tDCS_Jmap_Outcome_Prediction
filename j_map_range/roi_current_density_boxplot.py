@@ -16,6 +16,11 @@ Usage
 
 from __future__ import annotations
 
+import os
+
+# Repository root (parent of this j_map_range/ folder)
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # =============================================================================
 # CONSTANTS — edit these as needed
 # =============================================================================
@@ -26,10 +31,7 @@ JMAP_MAGNITUDE_FILENAME = "wT1_tDCSLAB_Jbrain.nii"
 JMAP_THETA_FILENAME     = "wT1_tDCSLAB_ThetaBrain.nii"
 JMAP_PHI_FILENAME       = "wT1_tDCSLAB_PhiBrain.nii"
 
-JMAP_XYZ_BASE_DIR = (
-    "/orange/ruogu.fang/junfu.cheng/SMILE/j_map/j_map_direction/"
-    "read_matlab_from_skylar/"
-)
+JMAP_XYZ_BASE_DIR = os.path.join(_REPO_ROOT, "read_matlab_from_skylar", "")
 JMAP_X_FILENAME = "wT1_tDCSLAB_Jbrain_x_fromEmag.nii"
 JMAP_Y_FILENAME = "wT1_tDCSLAB_Jbrain_y_fromEmag.nii"
 JMAP_Z_FILENAME = "wT1_tDCSLAB_Jbrain_z_fromEmag.nii"

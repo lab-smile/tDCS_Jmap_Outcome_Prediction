@@ -7,18 +7,23 @@ This code is intentionally modular for easier debugging.
 """
 
 from __future__ import annotations
+import os
 from dataclasses import dataclass
 from typing import Dict, List, Optional
 
 # ---------------------------------------------------------------------
-# Paths (edit these for your environment)
+# Paths (resolved relative to this repository; no hard-coded absolute paths)
 # ---------------------------------------------------------------------
 
-# Old workspace that contains subject-level MNI-warped direction maps
-OLD_WORKING_DIR = "/orange/ruogu.fang/junfu.cheng/SMILE/j_map/j_map_direction/read_matlab_from_skylar"
+# Repository root (the folder that contains this config.py)
+REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-# New workspace to write ML results
-NEW_WORKING_DIR = "/orange/ruogu.fang/junfu.cheng/SMILE/j_map/j_map_direction/direction_ml_mixed"
+# Workspace that contains subject-level MNI-warped direction maps
+# (<repo>/read_matlab_from_skylar/<subject_id>/, produced by the MATLAB scripts)
+OLD_WORKING_DIR = os.path.join(REPO_ROOT, "read_matlab_from_skylar")
+
+# Workspace to write ML results (results<timestamp>/ folders are created here)
+NEW_WORKING_DIR = REPO_ROOT
 
 # Expected per-subject files in OLD_WORKING_DIR/<subject_id>/
 THETA_MNI_NAME = "wT1_tDCSLAB_theta_fromE_maskJbrain.nii"

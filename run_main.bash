@@ -43,4 +43,4 @@ cd "$WORKSPACE"
 echo "Workspace is $(realpath "$WORKSPACE")"
 
 
-python -m direction_ml_mixed.run_experiment
+python -m j_map_tdcs_brain.run_experiment
